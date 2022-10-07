@@ -1,4 +1,4 @@
-package testGit;
+package test;
 
 public class MiApp {
 
