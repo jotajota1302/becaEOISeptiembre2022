@@ -6,13 +6,14 @@ public class MiApp {
 		
 		System.out.println("Soy JJ");
 		
+<<<<<<< HEAD
 		System.out.println("Soy Ezequiel");
 
 		System.out.println("Soy Cristian");
+=======
+		System.out.println("Soy Deivi");
+>>>>>>> branch 'main' of https://github.com/jotajota1302/becaEOISeptiembre2022
 
-		System.out.println("Soy Néstor");
-
-		System.out.println("oaisdhfklajshdflkasdfhj");
 	}
 
 }
