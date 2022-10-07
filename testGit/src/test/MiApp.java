@@ -8,34 +8,7 @@ public class MiApp {
 
 
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-			System.out.println("Soy Loren");
+		System.out.println("Soy Loren");
 	}
 
 }
