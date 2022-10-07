@@ -14,7 +14,7 @@ public class MiApp {
 		
 		System.out.println("Soy Cristian");		
 	
-		System.out.println("Soy Pedro, regresé");			
+		System.out.println("Soy Pedro, 😎");			
 
 		System.out.println("Soy Jorge Mestre");
 
