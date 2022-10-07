@@ -12,29 +12,15 @@ public class MiApp {
 
 		System.out.println("Soy Sonia");
 		
-		System.out.println("Soy Cristian");
+		System.out.println("Soy Cristian");		
 	
-		System.out.println("Soy Néstor");
-	
-		System.out.println("Soy Sonia");
-	
-		System.out.println("Soy Cristian");
-			
-		System.out.println("Soy Néstor");
-	
-		System.out.println("Soy Pedro, regresé");	
-		
-		System.out.println("Soy Néstor");		
-		
-		System.out.println("Soy Pedro, regresé");		
+		System.out.println("Soy Pedro, 😎");			
 
 		System.out.println("Soy Jorge Mestre");
 
 		System.out.println("Soy Deivi");
-	
-		System.out.println("Soy Cristian");
-
-		System.out.println("Soy Deivi");	
+		
+		System.out.println("Soy Pepe");
 
 	}
 
