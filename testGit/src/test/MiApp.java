@@ -25,6 +25,8 @@ public class MiApp {
 		System.out.println("Soy Javi");
 		
 		System.out.println("Soy Manu");
+		
+		System.out.println("Soy Maxi");
 
 	}
 
