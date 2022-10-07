@@ -4,8 +4,6 @@ public class MiApp {
 
 	public static void main(String[] args) {
 		
-		System.out.println("Soy JJ");
-
 		System.out.println("Soy Ezequiel");
 
 		System.out.println("Soy Néstor");
@@ -27,6 +25,8 @@ public class MiApp {
 		System.out.println("Soy Manu");
 		
 		System.out.println("Soy Maxi");
+		
+		System.out.println("Me flipa GIT no falla nunca...");
 
 	}
 
