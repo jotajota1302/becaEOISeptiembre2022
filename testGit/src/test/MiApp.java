@@ -7,7 +7,7 @@ public class MiApp {
 		System.out.println("Soy JJ");
 
 		
-<<<<<<< HEAD
+
 		
 		
 		
@@ -48,9 +48,8 @@ public class MiApp {
 
 		System.out.println("Soy Jorge Mestre");
 
-=======
+
 		System.out.println("Soy Deivi");
->>>>>>> branch 'main' of https://github.com/jotajota1302/becaEOISeptiembre2022.git
 
 	}
 
