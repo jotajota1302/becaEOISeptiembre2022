@@ -7,6 +7,8 @@ public class MiApp {
 		System.out.println("Soy JJ");
 		
 		System.out.println("Soy Deivi");
+		
+		System.out.println("Soy Pedro");
 
 	}
 
