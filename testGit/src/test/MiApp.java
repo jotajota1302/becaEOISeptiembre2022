@@ -9,8 +9,7 @@ public class MiApp {
 		System.out.println("Soy Cristian");
 
 		System.out.println("Soy Néstor");
-
-		System.out.println("oaisdhfklajshdflkasdfhj");
+		
 	}
 
 }
