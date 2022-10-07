@@ -8,6 +8,11 @@ public class MiApp {
 		
 		System.out.println("Soy Ezequiel");
 
+		System.out.println("Soy Cristian");
+
+		System.out.println("Soy Néstor");
+
+
 	}
 
 }
