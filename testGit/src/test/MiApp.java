@@ -8,7 +8,7 @@ public class MiApp {
 		
 		System.out.println("Soy Deivi");
 		
-		System.out.println("Soy Pedro");
+		System.out.println("Perico los palotes");
 
 	}
 
