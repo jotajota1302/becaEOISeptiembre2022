@@ -1,4 +1,4 @@
-package comidasana;
+package edu.es.eoi;
 
 public class MiApp {
 
