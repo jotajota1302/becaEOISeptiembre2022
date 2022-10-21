@@ -3,6 +3,7 @@ package edu.es.eoi.view;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import edu.es.eoi.model.Receta;
 import edu.es.eoi.service.RecetaService;
 
 public class MenuPrincipal {
@@ -21,8 +22,11 @@ public class MenuPrincipal {
 		int option=scan.nextInt();
 		
 		System.out.println("llamo al servicio de recetas y le pido la receta que quiero");
-				
-		System.out.println(service.buscarReceta(option));
+		
+		Receta receta=service.buscarReceta(option);
+		
+		System.out.println(receta);
+		System.out.println("precio receta: "+service.calculaPrecioReceta(receta) + "€");
 		
 		printMenuPrincipal();
 		
