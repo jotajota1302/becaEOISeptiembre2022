@@ -6,6 +6,8 @@ import edu.es.eoi.service.RecetaService;
 
 public class MenuPrincipal {
 	
+	static RecetaService service= new RecetaService();
+	
 	public static void printMenuPrincipal() {
 		
 		System.out.println("Bienvenido a mi app, elige una opcion");
@@ -19,8 +21,7 @@ public class MenuPrincipal {
 		int option=scan.nextInt();
 		
 		System.out.println("llamo al servicio de recetas y le pido la receta que quiero");
-		
-		RecetaService service= new RecetaService();
+				
 		service.verReceta();
 		
 		printMenuPrincipal();
