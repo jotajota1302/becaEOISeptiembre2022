@@ -31,5 +31,11 @@ public class MenuPrincipal {
 		printMenuPrincipal();
 		
 	}
+	
+	public static void printMenuCrearReceta() {
+		
+		//si quiero crear receta pideme lo que necesitas
+		
+	}
 
 }
