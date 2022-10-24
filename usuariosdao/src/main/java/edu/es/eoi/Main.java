@@ -35,6 +35,11 @@ public class Main {
 		//guardo
 //		dao.update(user3);
 		
+		//CREAR HUELLA
+		
+		//CREAR DIRECCION
+		
+		//RECUPERAR HUELLA O DIRECCION/ES POR USER ID
 		
 		
 	}
