@@ -1,6 +1,7 @@
 package edu.es.eoi;
 
 import java.util.Date;
+import java.util.List;
 
 public class User {
 	
@@ -13,6 +14,11 @@ public class User {
 	private String password;
 	
 	private Date lastAccess;
+	
+	private Fingerprint fingerprint;
+	
+	private List<Address> addresses;
+	
 
 	public int getId() {
 		return id;
@@ -52,6 +58,24 @@ public class User {
 
 	public void setLastAccess(Date lastAccess) {
 		this.lastAccess = lastAccess;
+	}
+	
+	
+
+	public Fingerprint getFingerprint() {
+		return fingerprint;
+	}
+
+	public void setFingerprint(Fingerprint fingerprint) {
+		this.fingerprint = fingerprint;
+	}
+
+	public List<Address> getAddresses() {
+		return addresses;
+	}
+
+	public void setAddresses(List<Address> addresses) {
+		this.addresses = addresses;
 	}
 
 	@Override
