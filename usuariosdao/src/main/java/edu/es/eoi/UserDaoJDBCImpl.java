@@ -18,7 +18,7 @@ public class UserDaoJDBCImpl implements UserDao {
 		try {
 			con = Utils.getConnection();
 
-			String query = "INSERT INTO usuarios (username,mail,password,lastaccess) " + "VALUES (?,?,?,?)";
+			String query = "INSERT INTO user (username,mail,password,lastaccess) " + "VALUES (?,?,?,?)";
 
 			PreparedStatement st = con.prepareStatement(query);
 
@@ -48,7 +48,7 @@ public class UserDaoJDBCImpl implements UserDao {
 		try {
 			con = Utils.getConnection();
 
-			String query = "SELECT * FROM persona.usuarios where ID=?";
+			String query = "SELECT * FROM user where ID=?";
 
 			PreparedStatement st = con.prepareStatement(query);
 
@@ -85,7 +85,7 @@ public class UserDaoJDBCImpl implements UserDao {
 		try {
 			con = Utils.getConnection();
 			
-			String query = "UPDATE usuarios SET username = ?, mail = ?, password = ?, lastaccess=?  WHERE ID =?";
+			String query = "UPDATE user SET username = ?, mail = ?, password = ?, lastaccess=?  WHERE ID =?";
 
 			PreparedStatement st = con.prepareStatement(query);
 
@@ -115,7 +115,7 @@ public class UserDaoJDBCImpl implements UserDao {
 		try {
 			con = Utils.getConnection();
 
-			String query = "DELETE FROM usuarios where ID=?";
+			String query = "DELETE FROM user where ID=?";
 
 			PreparedStatement st = con.prepareStatement(query);
 
