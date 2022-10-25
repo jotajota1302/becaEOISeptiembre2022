@@ -1,5 +1,7 @@
 package edu.es.eoi;
 
+import java.util.Date;
+
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
@@ -51,12 +53,26 @@ public class Main {
 		
 		System.out.println(user);
 		
-//		FingerPrintDaoJPAImpl fingerDao=new FingerPrintDaoJPAImpl();
-//		
-//		Fingerprint huella = fingerDao.read(1);
+		FingerPrintDaoJPAImpl fingerDao=new FingerPrintDaoJPAImpl();
+		
+		Fingerprint huella = fingerDao.read(1);
 //		
 //		System.out.println(huella);
 		
+//		Date fecha= new Date();
+//		
+//		User nuevoUser= new User();
+//		nuevoUser.setMail("test@gmail.com");
+//		nuevoUser.setUsername("test");
+//		nuevoUser.setPassword("PPPPPP");
+//		nuevoUser.setLastAccess(fecha);	
+//		
+//		Fingerprint nuevaHuella= new Fingerprint();
+//		nuevaHuella.setFinger("indice");
+//		nuevaHuella.setImage("ruta");
+//		nuevaHuella.setScandate(fecha);
+//		
+
 	}
 
 }
