@@ -4,12 +4,12 @@ import edu.es.eoi.entity.User;
 
 public interface UserDao {
 
-	void create(User user) throws Exception;
+	void create(User user);
 
-	User read(int id) throws Exception;
+	User read(int id);
 
-	void update(User user) throws Exception;
+	void update(User user);
 
-	void delete(int id) throws Exception;
+	void delete(int id);
 
 }

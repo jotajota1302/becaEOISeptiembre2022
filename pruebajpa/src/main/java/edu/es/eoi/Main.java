@@ -3,11 +3,14 @@ package edu.es.eoi;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
+import edu.es.eoi.dao.UserDao;
+import edu.es.eoi.dao.UserDaoJPAImpl;
 import edu.es.eoi.entity.Prueba;
+import edu.es.eoi.entity.User;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 				
 		//Ya he acabado de configurar JPA 
 		//1-libreras en el pom
@@ -16,7 +19,7 @@ public class Main {
 		
 		EntityManager manager=Persistence.createEntityManagerFactory("BASEDEDATOSPRUEBA").createEntityManager();
 		
-		Prueba prueba1=manager.find(Prueba.class, 1);
+//		Prueba prueba1=manager.find(Prueba.class, 1);
 //		Prueba prueba2=manager.find(Prueba.class, 2);
 		
 		Prueba nueva= new Prueba();
@@ -36,10 +39,15 @@ public class Main {
 		
 		Prueba remove=manager.find(Prueba.class, 2);
 		
-		manager.getTransaction().begin();
-		manager.remove(remove);
-		manager.getTransaction().commit();
+//		manager.getTransaction().begin();
+//		manager.remove(remove);
+//		manager.getTransaction().commit();
+				
+		UserDao userDao= new UserDaoJPAImpl();
 		
+		User user=userDao.read(10);
+		
+		System.out.println(user);
 		
 	}
 
