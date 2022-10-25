@@ -54,24 +54,29 @@ public class Main {
 		System.out.println(user);
 		
 		FingerPrintDaoJPAImpl fingerDao=new FingerPrintDaoJPAImpl();
-		
-		Fingerprint huella = fingerDao.read(1);
+//		
+//		Fingerprint huella = fingerDao.read(1);
 //		
 //		System.out.println(huella);
 		
-//		Date fecha= new Date();
-//		
-//		User nuevoUser= new User();
-//		nuevoUser.setMail("test@gmail.com");
-//		nuevoUser.setUsername("test");
-//		nuevoUser.setPassword("PPPPPP");
-//		nuevoUser.setLastAccess(fecha);	
-//		
-//		Fingerprint nuevaHuella= new Fingerprint();
-//		nuevaHuella.setFinger("indice");
-//		nuevaHuella.setImage("ruta");
-//		nuevaHuella.setScandate(fecha);
-//		
+		Date fecha= new Date();
+		
+		User nuevoUser= new User();
+		nuevoUser.setMail("test@gmail.com");
+		nuevoUser.setUsername("test");
+		nuevoUser.setPassword("PPPPPP");
+		nuevoUser.setLastAccess(fecha);	
+		
+		Fingerprint nuevaHuella= new Fingerprint();
+		nuevaHuella.setFinger("indice");
+		nuevaHuella.setImage("ruta");
+		nuevaHuella.setScandate(fecha);
+		
+		//setear la relacion
+		nuevaHuella.setUser(nuevoUser);		
+		user.setFingerprint(nuevaHuella);
+		
+		userDao.create(nuevoUser);	
 
 	}
 
