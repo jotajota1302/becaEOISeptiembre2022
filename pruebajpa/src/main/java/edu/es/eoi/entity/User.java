@@ -7,7 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(schema = "persona", name = "user")
@@ -26,8 +29,12 @@ public class User {
 	@Column
 	private String password;
 	
+	@Column
+	@Temporal(TemporalType.DATE)
 	private Date lastAccess;
 	
+	@OneToOne(mappedBy = "user")
+	private Fingerprint fingerprint;
 
 	public int getId() {
 		return id;
@@ -69,6 +76,13 @@ public class User {
 		this.lastAccess = lastAccess;
 	}
 	
+	public Fingerprint getFingerprint() {
+		return fingerprint;
+	}
+
+	public void setFingerprint(Fingerprint fingerprint) {
+		this.fingerprint = fingerprint;
+	}
 
 	@Override
 	public String toString() {
