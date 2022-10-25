@@ -8,8 +8,7 @@ import edu.es.eoi.entity.Prueba;
 public class Main {
 
 	public static void main(String[] args) {
-		
-		
+				
 		//Ya he acabado de configurar JPA 
 		//1-libreras en el pom
 		//2-persistence xml
@@ -17,9 +16,30 @@ public class Main {
 		
 		EntityManager manager=Persistence.createEntityManagerFactory("BASEDEDATOSPRUEBA").createEntityManager();
 		
-		Prueba prueba=manager.find(Prueba.class, 1);
-
-		System.out.println(prueba.getCampo1());
+		Prueba prueba1=manager.find(Prueba.class, 1);
+//		Prueba prueba2=manager.find(Prueba.class, 2);
+		
+		Prueba nueva= new Prueba();
+		nueva.setCampo("Test1");
+		nueva.setCampo2("Test2");
+		
+//		manager.getTransaction().begin();
+//		manager.persist(nueva);
+//		manager.getTransaction().commit();
+		
+		Prueba updated=manager.find(Prueba.class, 3);
+		updated.setCampo2("updated");
+		
+//		manager.getTransaction().begin();
+//		manager.merge(updated);
+//		manager.getTransaction().commit();
+		
+		Prueba remove=manager.find(Prueba.class, 2);
+		
+		manager.getTransaction().begin();
+		manager.remove(remove);
+		manager.getTransaction().commit();
+		
 		
 	}
 

@@ -5,6 +5,8 @@ import java.util.Date;
 public class Main {
 	
 	public static UserDao dao= new UserDaoJDBCImpl();
+	public static FingerprintDaoJDBCImpl fingerDao= new FingerprintDaoJDBCImpl();
+	
 
 	public static void main(String[] args) throws Exception {
 	
@@ -18,7 +20,7 @@ public class Main {
 		
 //		UserDAO dao= new UserDAO();		
 		
-		dao.create(user);
+//		dao.create(user);
 		
 		//dao.create(user);			
 	
@@ -36,6 +38,18 @@ public class Main {
 //		dao.update(user3);
 		
 		//CREAR HUELLA
+		
+		Fingerprint fingerprint= new Fingerprint();
+		fingerprint.setFinger("indice");
+		fingerprint.setImage("example.img");
+		fingerprint.setScandate(fecha);
+		
+		//primero lo busco
+		User user3=dao.read(10);
+		
+		fingerprint.setUser(user3);
+	
+		fingerDao.create(fingerprint);
 		
 		//CREAR DIRECCION
 		
