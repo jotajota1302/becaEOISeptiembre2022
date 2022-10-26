@@ -6,11 +6,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
 import edu.es.eoi.dao.FingerPrintDaoJPAImpl;
-import edu.es.eoi.dao.UserDao;
 import edu.es.eoi.dao.UserDaoJDBCImpl;
 import edu.es.eoi.dao.UserDaoJPAImpl;
 import edu.es.eoi.entity.Fingerprint;
-import edu.es.eoi.entity.Prueba;
 import edu.es.eoi.entity.User;
 
 public class Main {
@@ -64,7 +62,7 @@ public class Main {
 		data= new Date();
 		inicio= data.getTime();
 		
-		UserDao userDao= new UserDaoJPAImpl();				 
+		UserDaoJPAImpl userDao= new UserDaoJPAImpl();				 
 		User user=userDao.read(1);
 		
 		data= new Date();
@@ -100,7 +98,10 @@ public class Main {
 //		userDao.create(nuevoUser);	
 		
 		userDao.read(1);
-
+		
+		System.out.println(userDao.findAll());
+		System.out.println(userDao.findUsersByFingerprint("indice"));
+		
 	}
 
 }
