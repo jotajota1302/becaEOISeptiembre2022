@@ -9,22 +9,20 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(schema="persona" , name = "clientes")
+@Table(schema = "persona", name = "clientes")
 public class Cliente {
 
 	@Id
 	private String dni;
-	
+
 	@Column
 	private String nombre;
-	
+
 	@Column
 	private String direccion;
-	
+
 	@OneToMany(mappedBy = "cliente")
 	private List<Cuenta> cuentas;
-
-	
 
 	public String getDni() {
 		return dni;
@@ -57,7 +55,5 @@ public class Cliente {
 	public void setCuentas(List<Cuenta> cuentas) {
 		this.cuentas = cuentas;
 	}
-	
-	
-	
+
 }
