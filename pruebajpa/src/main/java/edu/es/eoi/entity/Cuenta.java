@@ -21,6 +21,10 @@ public class Cuenta {
 	@JoinColumn(name = "dni", referencedColumnName = "dni")
 	private Cliente cliente;
 
+	@ManyToOne
+	@JoinColumn(name = "idbanco", referencedColumnName = "id")
+	private Banco banco;
+	
 	public double getSaldo() {
 		return saldo;
 	}
@@ -35,6 +39,22 @@ public class Cuenta {
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Banco getBanco() {
+		return banco;
+	}
+
+	public void setBanco(Banco banco) {
+		this.banco = banco;
 	}
 	
 	
