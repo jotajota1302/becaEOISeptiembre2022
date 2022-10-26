@@ -50,7 +50,7 @@ public class Main {
 		UserDao userDao= new UserDaoJPAImpl();
 		
 		User user=userDao.read(1);
-		
+	
 		System.out.println(user);
 		
 		FingerPrintDaoJPAImpl fingerDao=new FingerPrintDaoJPAImpl();
@@ -76,7 +76,9 @@ public class Main {
 		nuevaHuella.setUser(nuevoUser);		
 		user.setFingerprint(nuevaHuella);
 		
-		userDao.create(nuevoUser);	
+//		userDao.create(nuevoUser);	
+		
+		userDao.read(1);
 
 	}
 
