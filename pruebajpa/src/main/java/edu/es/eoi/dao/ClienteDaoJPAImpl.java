@@ -9,6 +9,14 @@ public class ClienteDaoJPAImpl {
 
 	private EntityManager manager = Persistence.createEntityManagerFactory("BASEDEDATOSPRUEBA").createEntityManager();
 
+	public void create(Cliente cliente) {
+		manager.getTransaction().begin();
+		manager.persist(cliente);
+		manager.getTransaction().commit();
+	}
+
+	
+	
 	public Cliente read(String dni) {
 		return manager.find(Cliente.class, dni);
 	}
