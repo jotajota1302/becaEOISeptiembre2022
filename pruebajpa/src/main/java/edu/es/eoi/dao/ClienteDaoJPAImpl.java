@@ -15,8 +15,6 @@ public class ClienteDaoJPAImpl {
 		manager.getTransaction().commit();
 	}
 
-	
-	
 	public Cliente read(String dni) {
 		return manager.find(Cliente.class, dni);
 	}
