@@ -1,15 +1,7 @@
 package edu.es.eoi;
 
-import java.util.Date;
-
-import javax.persistence.EntityManager;
-import javax.persistence.Persistence;
-
-import edu.es.eoi.dao.FingerPrintDaoJPAImpl;
-import edu.es.eoi.dao.UserDaoJDBCImpl;
-import edu.es.eoi.dao.UserDaoJPAImpl;
-import edu.es.eoi.entity.Fingerprint;
-import edu.es.eoi.entity.User;
+import edu.es.eoi.dao.ClienteDaoJPAImpl;
+import edu.es.eoi.entity.Cliente;
 
 public class Main {
 
@@ -20,7 +12,7 @@ public class Main {
 		//2-persistence xml
 		//3-Anotaciones en la clase prueba (entities)
 		
-		EntityManager manager=Persistence.createEntityManagerFactory("BASEDEDATOSPRUEBA").createEntityManager();
+//		EntityManager manager=Persistence.createEntityManagerFactory("BASEDEDATOSPRUEBA").createEntityManager();
 		
 //		Prueba prueba1=manager.find(Prueba.class, 1);
 //		Prueba prueba2=manager.find(Prueba.class, 2);
@@ -46,61 +38,68 @@ public class Main {
 //		manager.remove(remove);
 //		manager.getTransaction().commit();
 			
-		Date data= new Date();
-		long inicio= data.getTime();
-		
-		UserDaoJDBCImpl userDao2 = new UserDaoJDBCImpl();
-		User user2=userDao2.read(1);
-		
-		data= new Date();
-		long fin= data.getTime();
-		
-		System.out.println("Esto ha tardado: " +(fin-inicio));
-		
-		System.out.println(user2);
-		
-		data= new Date();
-		inicio= data.getTime();
-		
-		UserDaoJPAImpl userDao= new UserDaoJPAImpl();				 
-		User user=userDao.read(1);
-		
-		data= new Date();
-		fin= data.getTime();
-		
-		System.out.println("Esto ha tardado: " +(fin-inicio));
-		
-		System.out.println(user);
-		
-		FingerPrintDaoJPAImpl fingerDao=new FingerPrintDaoJPAImpl();
+//		Date data= new Date();
+//		long inicio= data.getTime();
 //		
-//		Fingerprint huella = fingerDao.read(1);
+//		UserDaoJDBCImpl userDao2 = new UserDaoJDBCImpl();
+//		User user2=userDao2.read(1);
 //		
-//		System.out.println(huella);
+//		data= new Date();
+//		long fin= data.getTime();
+//		
+//		System.out.println("Esto ha tardado: " +(fin-inicio));
+//		
+//		System.out.println(user2);
+//		
+//		data= new Date();
+//		inicio= data.getTime();
+//		
+//		UserDaoJPAImpl userDao= new UserDaoJPAImpl();				 
+//		User user=userDao.read(1);
+//		
+//		data= new Date();
+//		fin= data.getTime();
+//		
+//		System.out.println("Esto ha tardado: " +(fin-inicio));
+//		
+//		System.out.println(user);
+//		
+//		FingerPrintDaoJPAImpl fingerDao=new FingerPrintDaoJPAImpl();
+////		
+////		Fingerprint huella = fingerDao.read(1);
+////		
+////		System.out.println(huella);
+//		
+//		Date fecha= new Date();
+//		
+//		User nuevoUser= new User();
+//		nuevoUser.setMail("test@gmail.com");
+//		nuevoUser.setUsername("test");
+//		nuevoUser.setPassword("PPPPPP");
+//		nuevoUser.setLastAccess(fecha);	
+//		
+//		Fingerprint nuevaHuella= new Fingerprint();
+//		nuevaHuella.setFinger("indice");
+//		nuevaHuella.setImage("ruta");
+//		nuevaHuella.setScandate(fecha);
+//		
+//		//setear la relacion
+//		nuevaHuella.setUser(nuevoUser);		
+//		user.setFingerprint(nuevaHuella);
+//		
+////		userDao.create(nuevoUser);	
+//		
+//		userDao.read(1);
+//		
+//		System.out.println(userDao.findAll());
+//		System.out.println(userDao.findUsersByFingerprint("indice"));
+//		
 		
-		Date fecha= new Date();
+		ClienteDaoJPAImpl dao= new ClienteDaoJPAImpl();
 		
-		User nuevoUser= new User();
-		nuevoUser.setMail("test@gmail.com");
-		nuevoUser.setUsername("test");
-		nuevoUser.setPassword("PPPPPP");
-		nuevoUser.setLastAccess(fecha);	
+		Cliente cliente = dao.read("03765983S");
 		
-		Fingerprint nuevaHuella= new Fingerprint();
-		nuevaHuella.setFinger("indice");
-		nuevaHuella.setImage("ruta");
-		nuevaHuella.setScandate(fecha);
-		
-		//setear la relacion
-		nuevaHuella.setUser(nuevoUser);		
-		user.setFingerprint(nuevaHuella);
-		
-//		userDao.create(nuevoUser);	
-		
-		userDao.read(1);
-		
-		System.out.println(userDao.findAll());
-		System.out.println(userDao.findUsersByFingerprint("indice"));
+		System.out.println(cliente.getNombre());
 		
 	}
 
