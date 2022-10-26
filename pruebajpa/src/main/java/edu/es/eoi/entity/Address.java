@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -33,7 +34,7 @@ public class Address {
 	@Column
 	private String zipcode;
 
-	@ManyToMany(mappedBy = "addresses")
+	@ManyToMany(fetch = FetchType.LAZY,mappedBy = "addresses")
 	private List<User> user;
 	
 	public int getId() {

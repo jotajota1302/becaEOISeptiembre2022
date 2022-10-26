@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,7 +33,7 @@ public class Fingerprint {
 	@Column
 	private String image;
 	
-	@OneToOne(cascade = CascadeType.ALL)	
+	@OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)	
 	@JoinColumn(name = "iduser", referencedColumnName = "id")
 	private User user;
 	

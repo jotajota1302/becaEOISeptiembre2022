@@ -7,6 +7,7 @@ import javax.persistence.Persistence;
 
 import edu.es.eoi.dao.FingerPrintDaoJPAImpl;
 import edu.es.eoi.dao.UserDao;
+import edu.es.eoi.dao.UserDaoJDBCImpl;
 import edu.es.eoi.dao.UserDaoJPAImpl;
 import edu.es.eoi.entity.Fingerprint;
 import edu.es.eoi.entity.Prueba;
@@ -26,31 +27,51 @@ public class Main {
 //		Prueba prueba1=manager.find(Prueba.class, 1);
 //		Prueba prueba2=manager.find(Prueba.class, 2);
 		
-		Prueba nueva= new Prueba();
-		nueva.setCampo("Test1");
-		nueva.setCampo2("Test2");
+//		Prueba nueva= new Prueba();
+//		nueva.setCampo("Test1");
+//		nueva.setCampo2("Test2");
 		
 //		manager.getTransaction().begin();
 //		manager.persist(nueva);
 //		manager.getTransaction().commit();
 		
-		Prueba updated=manager.find(Prueba.class, 3);
-		updated.setCampo2("updated");
+//		Prueba updated=manager.find(Prueba.class, 3);
+//		updated.setCampo2("updated");
 		
 //		manager.getTransaction().begin();
 //		manager.merge(updated);
 //		manager.getTransaction().commit();
 		
-		Prueba remove=manager.find(Prueba.class, 2);
+//		Prueba remove=manager.find(Prueba.class, 2);
 		
 //		manager.getTransaction().begin();
 //		manager.remove(remove);
 //		manager.getTransaction().commit();
-				
-		UserDao userDao= new UserDaoJPAImpl();
+			
+		Date data= new Date();
+		long inicio= data.getTime();
 		
+		UserDaoJDBCImpl userDao2 = new UserDaoJDBCImpl();
+		User user2=userDao2.read(1);
+		
+		data= new Date();
+		long fin= data.getTime();
+		
+		System.out.println("Esto ha tardado: " +(fin-inicio));
+		
+		System.out.println(user2);
+		
+		data= new Date();
+		inicio= data.getTime();
+		
+		UserDao userDao= new UserDaoJPAImpl();				 
 		User user=userDao.read(1);
-	
+		
+		data= new Date();
+		fin= data.getTime();
+		
+		System.out.println("Esto ha tardado: " +(fin-inicio));
+		
 		System.out.println(user);
 		
 		FingerPrintDaoJPAImpl fingerDao=new FingerPrintDaoJPAImpl();

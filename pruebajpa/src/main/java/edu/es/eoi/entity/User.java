@@ -40,14 +40,14 @@ public class User {
 	@Temporal(TemporalType.DATE)
 	private Date lastAccess;
 
-	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.LAZY,mappedBy = "user", cascade = CascadeType.ALL)
 	private Fingerprint fingerprint;
 
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "user_address", joinColumns = @JoinColumn(name = "iduser"), inverseJoinColumns = @JoinColumn(name = "idaddress"))
 	private List<Address> addresses;
 
-	@OneToMany(mappedBy = "user")
+	@OneToMany(fetch = FetchType.LAZY,mappedBy = "user")
 	private List<Animal> animals;
 
 	public int getId() {
