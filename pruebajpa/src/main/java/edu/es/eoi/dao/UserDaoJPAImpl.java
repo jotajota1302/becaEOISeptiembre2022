@@ -8,7 +8,7 @@ import javax.persistence.Query;
 
 import edu.es.eoi.entity.User;
 
-public class UserDaoJPAImpl implements UserDao {
+public class UserDaoJPAImpl implements UserDao{
 
 	private EntityManager manager = Persistence.createEntityManagerFactory("BASEDEDATOSPRUEBA").createEntityManager();
 	
@@ -50,4 +50,6 @@ public class UserDaoJPAImpl implements UserDao {
 		manager.remove(read(id));
 		manager.getTransaction().commit();
 	}
+
+
 }

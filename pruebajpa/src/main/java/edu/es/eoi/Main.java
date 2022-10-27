@@ -1,10 +1,11 @@
 package edu.es.eoi;
 
 import edu.es.eoi.dao.ClienteDaoJPAImpl;
-import edu.es.eoi.entity.Cliente;
 
 public class Main {
 
+	static ClienteDaoJPAImpl clienteDAO= new ClienteDaoJPAImpl();	
+	
 	public static void main(String[] args) throws Exception {
 				
 		//Ya he acabado de configurar JPA 
@@ -93,13 +94,34 @@ public class Main {
 //		
 //		System.out.println(userDao.findAll());
 //		System.out.println(userDao.findUsersByFingerprint("indice"));
+//				
+//		ClienteDaoJPAImpl dao= new ClienteDaoJPAImpl();
 //		
+//		Cliente cliente = dao.read("03765983S");
+//		
+//		System.out.println(cliente.getNombre());
+//		
+//		BancoDaoJPAImpl bancoDaoJPAImpl= new BancoDaoJPAImpl();
+//		
+//		Banco banco=bancoDaoJPAImpl.read(1);
+//		
+//		System.out.println(banco);
+//		
+//		CuentaDaoJPAImpl cuentaDaoJPAImpl= new CuentaDaoJPAImpl();
+//		
+//		Cuenta cuenta=cuentaDaoJPAImpl.read(1);
+//		
+//		System.out.println(cuenta);
 		
-		ClienteDaoJPAImpl dao= new ClienteDaoJPAImpl();
+		//Genericidad
 		
-		Cliente cliente = dao.read("03765983S");
+//		List bancos= new ArrayList();
+//			
+//		List<Cuenta> cuentas= new ArrayList<Cuenta>();
 		
-		System.out.println(cliente.getNombre());
+		MenuPrincipal.printMenu();
+		
+		main(args);
 		
 	}
 
