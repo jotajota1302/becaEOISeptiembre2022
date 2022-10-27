@@ -1,7 +1,8 @@
-package edu.es.eoi;
+package edu.es.eoi.view;
 
 import java.util.Scanner;
 
+import edu.es.eoi.Main;
 import edu.es.eoi.service.ClienteService;
 
 public class MenuPrincipal {

@@ -1,10 +1,11 @@
 package edu.es.eoi;
 
 import edu.es.eoi.dao.ClienteDaoJPAImpl;
+import edu.es.eoi.view.MenuPrincipal;
 
 public class Main {
 
-	static ClienteDaoJPAImpl clienteDAO= new ClienteDaoJPAImpl();	
+	public static ClienteDaoJPAImpl clienteDAO= new ClienteDaoJPAImpl();	
 	
 	public static void main(String[] args) throws Exception {
 				
