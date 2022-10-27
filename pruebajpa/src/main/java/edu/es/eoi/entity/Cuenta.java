@@ -14,7 +14,7 @@ public class Cuenta {
 	@Id
 	private int id;
 	
-	@Column
+	@Column(name = "saldo")
 	private double saldo;
 
 	@ManyToOne

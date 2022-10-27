@@ -1,11 +1,8 @@
 package edu.es.eoi;
 
-import edu.es.eoi.dao.ClienteDaoJPAImpl;
 import edu.es.eoi.view.MenuPrincipal;
 
 public class Main {
-
-	public static ClienteDaoJPAImpl clienteDAO= new ClienteDaoJPAImpl();	
 	
 	public static void main(String[] args) throws Exception {
 				
@@ -122,7 +119,7 @@ public class Main {
 		
 		MenuPrincipal.printMenu();
 		
-		main(args);
+		main(args);		
 		
 	}
 

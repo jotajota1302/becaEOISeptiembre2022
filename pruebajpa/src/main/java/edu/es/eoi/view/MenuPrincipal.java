@@ -2,11 +2,11 @@ package edu.es.eoi.view;
 
 import java.util.Scanner;
 
-import edu.es.eoi.Main;
 import edu.es.eoi.service.ClienteService;
 
 public class MenuPrincipal {
 
+	static ClienteService service= new ClienteService();
 	
 	public static void printMenu() {
 		
@@ -15,7 +15,7 @@ public class MenuPrincipal {
 		Scanner scan= new Scanner(System.in);
 		String dni=scan.next();
 	
-		System.out.println("Dinero Total: " + ClienteService.getSaldoTotal(Main.clienteDAO.read(dni)));
+		System.out.println("Dinero Total: " + service.getSaldoTotal(service.readCliente(dni)));
 			
 	
 	}
