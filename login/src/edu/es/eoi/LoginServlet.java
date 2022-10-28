@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import edu.es.eoi.entity.UserService;
+
 
 @WebServlet("/checkuser")
 public class LoginServlet extends HttpServlet {
@@ -25,7 +27,10 @@ public class LoginServlet extends HttpServlet {
 		System.out.println(request.getParameter("mail"));
 		System.out.println(request.getParameter("password"));
 		
-		//Desarrollar un LoginService que acceda a BBDD y a traves de un UserDAO compruebe si el password es correcto
+		//Desarrollar un UserService que acceda a BBDD y a traves de un UserDAO compruebe si el password es correcto
+		
+		UserService service= new UserService();
+		service.compruebaPassword(request.getParameter("mail"), request.getParameter("password"));
 		
 		response.setContentType("text/html");
 	    PrintWriter out = response.getWriter();
