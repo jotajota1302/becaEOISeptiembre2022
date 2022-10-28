@@ -22,7 +22,7 @@ public class PokemonServlet extends HttpServlet {
 		
 		Pokemon p=service.findPokemonById(Integer.valueOf(request.getParameter("numero")));
 		
-		response.getWriter().append(p.getName());
+		response.getWriter().append(p.toString());
 		
 	}
 }

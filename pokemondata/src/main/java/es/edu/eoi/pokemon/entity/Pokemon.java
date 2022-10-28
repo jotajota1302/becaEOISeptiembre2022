@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -23,6 +24,9 @@ public class Pokemon {
 	
 	@Column(name = "altura")
 	private double height;
+	
+	@OneToOne(mappedBy = "pokemon")
+	private Estadisticas estadisticas;
 
 	public int getNumero_pokedex() {
 		return numero_pokedex;
@@ -40,22 +44,14 @@ public class Pokemon {
 		this.name = name;
 	}
 
-	public double getWeight() {
-		return weight;
+	@Override
+	public String toString() {
+		return "Pokemon [numero_pokedex=" + numero_pokedex + ", name=" + name + ", weight=" + weight + ", height="
+				+ height + ", estadisticas=" + estadisticas + "]";
 	}
 
-	public void setWeight(double weight) {
-		this.weight = weight;
-	}
 
-	public double getHeight() {
-		return height;
-	}
 
-	public void setHeight(double height) {
-		this.height = height;
-	}
-	
 	
 	
 	
