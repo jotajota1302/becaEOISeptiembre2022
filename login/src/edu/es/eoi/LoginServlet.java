@@ -2,6 +2,7 @@ package edu.es.eoi;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import edu.es.eoi.entity.UserService;
+import edu.es.eoi.service.UserService;
 
 
 @WebServlet("/checkuser")
@@ -30,21 +31,43 @@ public class LoginServlet extends HttpServlet {
 		//Desarrollar un UserService que acceda a BBDD y a traves de un UserDAO compruebe si el password es correcto
 		
 		UserService service= new UserService();
-		service.compruebaPassword(request.getParameter("mail"), request.getParameter("password"));
+		try {
+			boolean login=service.compruebaPassword(request.getParameter("mail"), request.getParameter("password"));
+			
+			if(login) {
+				response.setContentType("text/html");
+			    PrintWriter out = response.getWriter();
+			    out.println("<html>");
+			    out.println("<head>");
+			    out.println("<title>Login</title>");
+			    out.println("</head>");
+			    out.println("<body bgcolor=\"white\">");
+			    out.print("You are logged");
+			    out.print("</br>");
+			    out.print("<a href=/login/login.html>Login</a>");
+			    out.println("</body>");
+			    out.println("</html>");
+			}else {
+				response.setContentType("text/html");
+			    PrintWriter out = response.getWriter();
+			    out.println("<html>");
+			    out.println("<head>");
+			    out.println("<title>Login</title>");
+			    out.println("</head>");
+			    out.println("<body bgcolor=\"white\">");
+			    out.print("User or password incorrect");
+			    out.print("</br>");
+			    out.print("<a href=/login/login.html>Login</a>");
+			    out.println("</body>");
+			    out.println("</html>");
+			}
+			
+			
+		} catch (SQLException e) {			
+			e.printStackTrace();
+		}
 		
-		response.setContentType("text/html");
-	    PrintWriter out = response.getWriter();
-
-	    out.println("<html>");
-	    out.println("<head>");
-	    out.println("<title>Login</title>");
-	    out.println("</head>");
-	    out.println("<body bgcolor=\"white\">");
-	    out.print("You are logged");
-	    out.print("</br>");
-	    out.print("<a href=/login/login.html>Login</a>");
-	    out.println("</body>");
-	    out.println("</html>");
+		
 
 	}
 
