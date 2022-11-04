@@ -44,15 +44,18 @@ public class PokemonRestController {
 		return new ResponseEntity<>(p,HttpStatus.OK);
 	}
 	
+	@SuppressWarnings("rawtypes")
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseBody
-	public void create(@RequestParam String pokedex, @RequestParam String nombre) {
+	public ResponseEntity create(@RequestParam String pokedex, @RequestParam String nombre) {
 		
 		Pokemon p= new Pokemon();
 		p.setNombre(nombre);
 		p.setPokedex(Integer.valueOf(pokedex));
 		
 		System.out.println("he creado el pokemon " + nombre);
+		
+		return new ResponseEntity(HttpStatus.CREATED);
 	}
 	
 	@RequestMapping(value = "/{pokedex}", method = RequestMethod.DELETE)
