@@ -16,9 +16,6 @@ import edu.es.eoi.service.ClientService;
 @RequestMapping("/clientes")
 public class ClientController {
 
-//	@Autowired
-//	ClientRepository repository;
-	
 	@Autowired
 	ClientService clientService;
 
