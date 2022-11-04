@@ -61,12 +61,20 @@ public class ClientController {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
 	@RequestMapping(value = "/{dni}", method = RequestMethod.DELETE)
 	public ResponseEntity<Client> deleteByDni(@PathVariable String dni) {
 
-		repository.deleteById(dni);			
-		return new ResponseEntity<Client>(HttpStatus.ACCEPTED);		
+		repository.deleteById(dni);
+		return new ResponseEntity<Client>(HttpStatus.ACCEPTED);
+	}
+
+	@RequestMapping(method = RequestMethod.DELETE)
+	public ResponseEntity<?> deletetAll() {
+
+		repository.deleteAll();
+		return new ResponseEntity<>(HttpStatus.ACCEPTED);
+
 	}
 
 }
