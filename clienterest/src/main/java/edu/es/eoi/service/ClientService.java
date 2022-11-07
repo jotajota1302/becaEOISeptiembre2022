@@ -27,7 +27,7 @@ public class ClientService {
 		Optional<Cliente> entity = repository.findById(pk);
 		
 		if(entity.isPresent()) {			
-			dto=new ClienteDto();
+			dto=new ClienteDto();			
 			BeanUtils.copyProperties(entity.get(), dto);			
 		}
 				
